@@ -2761,6 +2761,7 @@ Wallet.prototype.unlockV2 = function(options, cb) {
     deferred.promise.nodeify(cb);
 
     deferred.resolve(q.fcall(function() {
+        /* jshint -W071, -W074 */
         options.encryptedPrimarySeed = typeof options.encryptedPrimarySeed !== "undefined" ? options.encryptedPrimarySeed : self.encryptedPrimarySeed;
         options.encryptedSecret = typeof options.encryptedSecret !== "undefined" ? options.encryptedSecret : self.encryptedSecret;
 
@@ -2782,7 +2783,7 @@ Wallet.prototype.unlockV2 = function(options, cb) {
                 if (!self.primarySeed.length) {
                     throw new Error();
                 }
-            } catch(e) {
+            } catch (e) {
                 throw new blocktrail.WalletDecryptError("Failed to decrypt primarySeed");
             }
 
@@ -2799,7 +2800,7 @@ Wallet.prototype.unlockV2 = function(options, cb) {
                 if (!self.secret.length) {
                     throw new Error();
                 }
-            } catch(e) {
+            } catch (e) {
                 throw new blocktrail.WalletDecryptError("Failed to decrypt secret");
             }
             try {
@@ -2807,7 +2808,7 @@ Wallet.prototype.unlockV2 = function(options, cb) {
                 if (!self.primarySeed.length) {
                     throw new Error();
                 }
-            } catch(e) {
+            } catch (e) {
                 throw new blocktrail.WalletDecryptError("Failed to decrypt primarySeed");
             }
         }
