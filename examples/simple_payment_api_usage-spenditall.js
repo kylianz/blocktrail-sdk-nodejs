@@ -2,14 +2,14 @@ var blocktrail = require('../'); // require('blocktrail-sdk') when trying exampl
 var bitcoin = blocktrail.bitcoin;
 
 var client = blocktrail.BlocktrailSDK({
-    apiKey: "MY_APIKEY",
-    apiSecret: "MY_APISECRET",
-    testnet: true
+    apiKey: "56e781972fa0b820da60abc8a04761boaa32eds",
+    apiSecret: "adaa6250d05cb35bb970e9e6c2a0d287eec76a0d",
+    
 });
 
 client.initWallet({
-    identifier: "example-wallet",
-    readOnly: true
+    identifier: "5918c5f14dc9b960",
+    
 }, function(err, wallet) {
     if (err) {
         console.log(err);
